@@ -1,0 +1,16 @@
+{
+    "name": "BrainWash",
+    "version": "1.0.0",
+    "homepage": "https://bmb-studios.eu/brainwash",
+    "authors": [
+    "George Bratsos <geobratsos@gmail.com>"
+  ],
+    "license": "GPL",
+    "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+    "dependencies": {
+    }
+}
