@@ -22,6 +22,9 @@ After you have configured everything run:
 * `npm run watch` to compile your SCSS files.
 * `npm run min` to minify and append all your changes to all HTML files.
 
+# Updating
+* `gem update --system`
+
 
 # Config.rb
 
