@@ -16,7 +16,7 @@ This stack contains my workflow Gulp tasks.
 # Directions
 
 * cd into directort and run `npm install`.
-* You can use [Bower](http://bower.io/) package manager to install packages (like Zurb Foundation or Twitter Bootstrap etc.). Type `bower install <package>`.
+* You can use [Bower](http://bower.io/) package manager to install packages (like Zurb Foundation or Twitter Bootstrap etc.). Type `bower install <package> --save`.
 
 After you have configured everything run:
 * `npm run watch` to compile your SCSS files.
