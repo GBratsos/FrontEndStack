@@ -3,6 +3,7 @@ Front-end developer stack with SASS
 
 This stack contains my workflow Gulp tasks.
 
+
 # Gulp Taks
 
 * [Gulp-compass](https://www.npmjs.com/package/gulp-compass)
@@ -22,9 +23,6 @@ After you have configured everything run:
 * `npm run min` to minify and append all your changes to all HTML files.
 
 
-
 # Config.rb
 
 This file contains all the configuration with paths for compass to use.
-
-
