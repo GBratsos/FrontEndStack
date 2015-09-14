@@ -2,7 +2,8 @@ var gulp = require('gulp'),
     compass = require('gulp-compass'),
     concat = require("gulp-concat"),
     uglify = require("gulp-uglify"),
-    cssmin = require("gulp-cssmin");
+    cssmin = require("gulp-cssmin"),
+    htmlreplace = require("gulp-html-replace");
 
 
 /**
@@ -25,6 +26,7 @@ gulp.task('compile_styles', function () {
     pipe(gulp.dest('website/css'));
 });
 
+//Runs all above Development Environment
 gulp.task('watch', function () {
     gulp.watch(['./scss/*'], ['compile_styles']);
 });
@@ -36,6 +38,7 @@ gulp.task('watch', function () {
  * TASKS FOR PRODUCTION ENVIRONMENT
  * --------------------------------
  */
+
 var config = {
     paths: {
         javascript: {
@@ -47,8 +50,9 @@ var config = {
             dest: "website/css"
         }
     }
-}
+};
 
+// This task minifies user script.js
 gulp.task("scripts", function () {
     return gulp.src(config.paths.javascript.src)
         .pipe(uglify())
@@ -56,6 +60,7 @@ gulp.task("scripts", function () {
         .pipe(gulp.dest(config.paths.javascript.dest));
 });
 
+// This task minify all CSS files
 gulp.task("css", function () {
     return gulp.src(config.paths.css.src)
         .pipe(cssmin())
@@ -63,4 +68,15 @@ gulp.task("css", function () {
         .pipe(gulp.dest(config.paths.css.dest));
 });
 
-gulp.task("min", ["scripts", "css"]);
+// This task updates all HTML pages with the minified JS/CSS
+gulp.task('replace', function () {
+    return gulp.src('website/*')
+        .pipe(htmlreplace({
+            css: 'css/style.min.css',
+            js: 'js/script.min.js'
+        }))
+        .pipe(gulp.dest('website/'));
+});
+
+// Runs all above Production Environment
+gulp.task("min", ["scripts", "css", "replace"]);
