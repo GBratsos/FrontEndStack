@@ -9,6 +9,7 @@ This stack contains my workflow Gulp tasks.
 * [Gulp-compass](https://www.npmjs.com/package/gulp-compass)
 * [Gulp-concat](https://www.npmjs.com/package/gulp-concat)
 * [Gulp-uglify](https://www.npmjs.com/package/gulp-uglify)
+* [Gulp-Autoprefixer](https://www.npmjs.com/package/autoprefixer)
 * [Gulp-cssmin](https://www.npmjs.com/package/gulp-cssmin)
 * [Gulp-html-replace](https://www.npmjs.com/package/gulp-html-replace)
 
