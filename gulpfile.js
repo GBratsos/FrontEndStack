@@ -4,6 +4,7 @@ var gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     uglify = require("gulp-uglify"),
     cssmin = require("gulp-cssmin"),
+    minifyHTML = require('gulp-minify-html'),
     htmlreplace = require("gulp-html-replace");
 
 
@@ -17,14 +18,14 @@ gulp.task('compile_styles', function () {
     src('scss/style.scss').
     pipe(compass({
         config_file: 'config.rb',
-        css: 'website/css',
+        css: 'website-dev/css',
         sass: 'scss',
         sourcemap: true,
         style: 'expanded',
         comments: 'normal',
         relative: true
     })).
-    pipe(gulp.dest('website/css'));
+    pipe(gulp.dest('website-dev/css'));
 });
 
 //Runs all above Development Environment
@@ -43,12 +44,16 @@ gulp.task('watch', function () {
 var config = {
     paths: {
         javascript: {
-            src: ["website/js/script.js"],
+            src: ["website-dev/js/script.js"],
             dest: "website/js"
         },
         css: {
-            src: ["website/css/**/*.css"],
+            src: ["website-dev/css/**/*.css"],
             dest: "website/css"
+        },
+        html: {
+            src: ["website-dev/*.html"],
+            dest: "website"
         }
     }
 };
@@ -70,9 +75,20 @@ gulp.task("css", function () {
         .pipe(gulp.dest(config.paths.css.dest));
 });
 
+// This task minify all HTML files
+gulp.task('minify-html', function() {
+  var opts = {
+    conditionals: true,
+    spare: true,
+  };
+  return gulp.src(config.paths.html.src)
+    .pipe(minifyHTML(opts))
+    .pipe(gulp.dest(config.paths.html.dest));
+});
+
 // This task updates all HTML pages with the minified JS/CSS
 gulp.task('replace', function () {
-    return gulp.src('website/*')
+    return gulp.src('website-dev/*')
         .pipe(htmlreplace({
             css: 'css/style.min.css',
             js: 'js/script.min.js'
@@ -81,4 +97,4 @@ gulp.task('replace', function () {
 });
 
 // Runs all above Production Environment
-gulp.task("min", ["scripts", "css", "replace"]);
+gulp.task("min", ["scripts", "css", "minify-html", "replace"]);
