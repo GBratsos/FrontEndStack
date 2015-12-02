@@ -4,10 +4,10 @@ add_import_path "bower_components/"
 
 
 http_path = "/"
-css_dir = "website/css"
+css_dir = "website-dev/css"
 sass_dir = "scss"
-images_dir = "website/images"
-javascripts_dir = "website/js"
+images_dir = "website-dev/images"
+javascripts_dir = "website-dev/js"
 
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed
