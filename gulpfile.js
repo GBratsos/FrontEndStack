@@ -4,7 +4,6 @@ var gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     uglify = require("gulp-uglify"),
     cssmin = require("gulp-cssmin"),
-    minifyHTML = require('gulp-minify-html'),
     htmlreplace = require("gulp-html-replace");
 
 
@@ -85,17 +84,6 @@ gulp.task("css", function () {
         .pipe(gulp.dest(config.paths.css.dest));
 });
 
-// This task minify all HTML files
-gulp.task('minify-html', function() {
-  var opts = {
-    conditionals: true,
-    spare: true,
-  };
-  return gulp.src(config.paths.html.src)
-    .pipe(minifyHTML(opts))
-    .pipe(gulp.dest(config.paths.html.dest));
-});
-
 // This task updates all HTML pages with the minified JS/CSS
 gulp.task('replace', function () {
     return gulp.src('website-dev/*')
@@ -107,4 +95,4 @@ gulp.task('replace', function () {
 });
 
 // Runs all above Production Environment
-gulp.task("min", ["scripts", "css", "minify-html", "replace"]);
+gulp.task("min", ["scripts", "css", "replace"]);
