@@ -51,6 +51,10 @@ var config = {
             src: ["website-dev/css/**/*.css"],
             dest: "website/css"
         },
+        images: {
+            src: ["website-dev/img/*/*"],
+            dest: "website/img"
+        },
         html: {
             src: ["website-dev/*.html"],
             dest: "website"
@@ -64,6 +68,12 @@ gulp.task("scripts", function () {
         .pipe(uglify())
         .pipe(concat("script.min.js"))
         .pipe(gulp.dest(config.paths.javascript.dest));
+});
+
+// This task moves all img folder to final
+gulp.task("images", function () {
+    return gulp.src(config.paths.images.src)
+        .pipe(gulp.dest(config.paths.images.dest));
 });
 
 // This task minify all CSS files
