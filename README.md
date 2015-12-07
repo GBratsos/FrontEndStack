@@ -12,8 +12,6 @@ This stack contains my workflow Gulp tasks.
 * [Gulp-Autoprefixer](https://www.npmjs.com/package/autoprefixer)
 * [Gulp-cssmin](https://www.npmjs.com/package/gulp-cssmin)
 * [Gulp-html-replace](https://www.npmjs.com/package/gulp-html-replace)
-* [Gulp-minify-html](https://www.npmjs.com/package/gulp-minify-html)
-
 
 # Directions
 
