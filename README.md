@@ -1,5 +1,5 @@
 # My Front-end developer stack
-Front-end developer stack with SASS
+Front-end developer stack with Compass `gem install compass`.
 
 This stack contains my workflow Gulp tasks.
 
