@@ -4,7 +4,7 @@
   "description": "A boilerplate for web projects utilizing Gulp and Compass",
   "author": "George Bratsos <geobratsos@gmail.com> (https://github.com/gbratsos)",
   "homepage": "https://github.com/GBratsos/FrontEndStack",
-  "licence": "MIT",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/GBratsos/FrontEndStack.git"
