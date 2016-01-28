@@ -1,11 +1,17 @@
 var gulp = require('gulp'),
-    compass = require('gulp-compass'),
+    sass = require('gulp-sass'),
     concat = require("gulp-concat"),
     autoprefixer = require('gulp-autoprefixer'),
     uglify = require("gulp-uglify"),
     cssmin = require("gulp-cssmin"),
     htmlreplace = require("gulp-html-replace");
+var $ = require('gulp-load-plugins')();
 
+var sassPaths = [
+    // Add your SASS path
+//  'bower_components/foundation-sites/scss'
+//  'bower_components/motion-ui/src'
+];
 
 /**
  * ---------------------------------
@@ -14,17 +20,15 @@ var gulp = require('gulp'),
  */
 gulp.task('compile_styles', function () {
     gulp.
-    src('scss/style.scss').
-    pipe(compass({
-        config_file: 'config.rb',
-        css: 'website-dev/css',
-        sass: 'scss',
-        sourcemap: true,
-        style: 'expanded',
-        comments: 'normal',
-        relative: true
-    })).
-    pipe(gulp.dest('website-dev/css'));
+    src('scss/style.scss')
+        .pipe($.sass({
+                includePaths: sassPaths
+            })
+            .on('error', $.sass.logError))
+        .pipe($.autoprefixer({
+            browsers: ['last 2 versions', 'ie >= 9']
+        }))
+        .pipe(gulp.dest('website-dev/css'));
 });
 
 //Runs all above Development Environment
