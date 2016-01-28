@@ -51,7 +51,7 @@ var config = {
             dest: "website/css"
         },
         images: {
-            src: ["website-dev/img/*/*"],
+            src: ["website-dev/img/**"],
             dest: "website/img"
         },
         html: {
@@ -95,4 +95,4 @@ gulp.task('replace', function () {
 });
 
 // Runs all above Production Environment
-gulp.task("min", ["scripts", "css", "replace"]);
+gulp.task("min", ["scripts", "css", "images", "replace"]);
