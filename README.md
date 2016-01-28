@@ -1,12 +1,12 @@
 # My Front-end developer stack
-Front-end developer stack with Compass `gem install compass`.
+Front-end developer stack with Sass.
 
 This stack contains my workflow Gulp tasks.
 
 
 # Gulp Taks
 
-* [Gulp-compass](https://www.npmjs.com/package/gulp-compass)
+* [Gulp-sass](https://www.npmjs.com/package/gulp-sass)
 * [Gulp-concat](https://www.npmjs.com/package/gulp-concat)
 * [Gulp-uglify](https://www.npmjs.com/package/gulp-uglify)
 * [Gulp-Autoprefixer](https://www.npmjs.com/package/autoprefixer)
@@ -21,11 +21,3 @@ This stack contains my workflow Gulp tasks.
 After you have configured everything run:
 * `npm run watch` to compile your SCSS files.
 * `npm run min` to minify and append all your changes to all HTML files.
-
-# Updating
-* `gem update --system`
-
-
-# Config.rb
-
-This file contains all the configuration with paths for compass to use.
