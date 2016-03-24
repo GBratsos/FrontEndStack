@@ -4,6 +4,8 @@ var gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     uglify = require("gulp-uglify"),
     cssmin = require("gulp-cssmin"),
+    imagemin = require("gulp-imagemin"),
+    browserSync = require('browser-sync').create(),
     htmlreplace = require("gulp-html-replace");
 var $ = require('gulp-load-plugins')();
 
@@ -18,6 +20,20 @@ var sassPaths = [
  * TASKS FOR DEVELOPMENT ENVIRONMENT
  * ---------------------------------
  */
+
+
+// Static Server + watching scss/html files
+gulp.task('serve', ['compile_styles'], function() {
+
+    browserSync.init({
+        server: "./website-dev"
+    });
+
+    gulp.watch("scss/*", ['compile_styles']);
+    gulp.watch("website-dev/*.html").on('change', browserSync.reload);
+});
+
+
 gulp.task('compile_styles', function () {
     gulp.
     src('scss/style.scss')
@@ -28,12 +44,13 @@ gulp.task('compile_styles', function () {
         .pipe($.autoprefixer({
             browsers: ['last 2 versions', 'ie >= 9']
         }))
-        .pipe(gulp.dest('website-dev/css'));
+        .pipe(gulp.dest('website-dev/css'))
+        .pipe(browserSync.stream());
 });
 
 //Runs all above Development Environment
 gulp.task('watch', function () {
-    gulp.watch(['./scss/*'], ['compile_styles']);
+    gulp.watch(['./scss/*'], ['serve'],['compile_styles']);
 });
 
 
@@ -76,6 +93,7 @@ gulp.task("scripts", function () {
 // This task moves all img folder to final
 gulp.task("images", function () {
     return gulp.src(config.paths.images.src)
+        .pipe(imagemin())
         .pipe(gulp.dest(config.paths.images.dest));
 });
 
