@@ -1,5 +1,5 @@
 {
-	"requireCurlyBraces": [
+    "requireCurlyBraces": [
         "if",
         "else",
         "for",
@@ -8,67 +8,81 @@
         "try",
         "catch"
     ],
-	"validateIndentation": 4,
-    "validateQuoteMarks": "'",
-	"requireSpacesInForStatement": true,
-	"requireParenthesesAroundIIFE": true,
-	"requireLineFeedAtFileEnd": true,
-	"requireBlocksOnNewline": true,
-	"disallowPaddingNewlinesInBlocks": true,
-	"disallowEmptyBlocks": true,
-	"disallowSpaceAfterObjectKeys": true,
-	"requireSpaceBeforeObjectValues": true,
-	"requireCommaBeforeLineBreak": true,
-	"requireSpaceBeforeBinaryOperators": [
-        "=", "+=", "-=", "*=", "/=", "%=", "<<=", ">>=", ">>>=",
-        "&=", "|=", "^=", "+=",
-
-        "+", "-", "*", "/", "%", "<<", ">>", ">>>", "&",
-        "|", "^", "&&", "||", "===", "==", ">=",
-        "<=", "<", ">", "!=", "!=="
+    "validateIndentation": 4,
+    "maximumLineLength": {
+        "value": 100,
+        "allExcept": [
+            "comments",
+            "urlComments",
+            "regex",
+            "functionSignature",
+            "require"
+        ]
+    },
+    "requireSpacesInForStatement": true,
+    "requireParenthesesAroundIIFE": true,
+    "requireLineFeedAtFileEnd": true,
+    "requireBlocksOnNewline": {
+        "includeComments": true,
+        "minLines": 1
+    },
+    "disallowPaddingNewlinesInBlocks": true,
+    "disallowEmptyBlocks": true,
+    "requireCommaBeforeLineBreak": true,
+    "disallowTrailingComma": true,
+    "requireSpaceAfterLineComment": true,
+    "disallowMultipleSpaces": {"allowEOLComments": true},
+    "disallowSpaceAfterObjectKeys": true,
+    "requireSpaceBeforeObjectValues": true,
+    "requireTrailingComma": false,
+    "requireSpaceAfterComma": true,
+    "requireSpaceBeforeComma": false,
+    "disallowSpaceAfterComma": false,
+    "disallowSpaceBeforeComma": true,
+    "requireSpaceBeforeBinaryOperators": true,
+    "requireSpaceAfterBinaryOperators": true,
+    "disallowMixedSpacesAndTabs": true,
+    "disallowSpacesInsideObjectBrackets": "all",
+    "disallowSpacesInsideArrayBrackets": "all",
+    "requireSpacesInConditionalExpression": true,
+    "requireSpacesInAnonymousFunctionExpression": {
+        "beforeOpeningRoundBrace": true,
+        "beforeOpeningCurlyBrace": true,
+        "allExcept": ["shorthand"]
+    },
+    "requireSpacesInFunctionDeclaration": {
+        "beforeOpeningCurlyBrace": true
+    },
+    "disallowSpacesInFunctionDeclaration": {
+        "beforeOpeningRoundBrace": true,
+    },
+    "requireSpaceAfterKeywords": [
+        "if",
+        "else",
+        "for",
+        "while",
+        "do",
+        "switch",
+        "case",
+        "return",
+        "try",
+        "catch",
+        "typeof",
+        "void"
     ],
-	"requireSpaceAfterBinaryOperators": true,
-	"disallowTrailingComma": true,
-	"requireDotNotation": true,
-	"disallowYodaConditions": true,
-	"disallowNewlineBeforeBlockStatements": true,
-	"requireSpacesInConditionalExpression": {
-      		"afterTest": true,
-      		"beforeConsequent": true,
-      		"afterConsequent": true,
-      		"beforeAlternate": true
-    	},
-	"requireSpacesInFunctionExpression": {
-		"beforeOpeningCurlyBrace": true
-	},
-	"requireSpacesInAnonymousFunctionExpression": {
-		"beforeOpeningRoundBrace": true,
-		"beforeOpeningCurlyBrace": true
-	},
-	"disallowSpacesInFunctionDeclaration": {
-		"beforeOpeningRoundBrace": true
-	},
-	"requireSpaceAfterKeywords": [
-		"do",
-		"for",
-		"if",
-		"else",
-		"switch",
-		"case",
-		"try",
-		"catch",
-		"void",
-		"while",
-		"with",
-		"return",
-		"typeof",
-		"function"
-	],
-	"disallowKeywordsOnNewLine": [
-		"else",
-		"catch"
-	],
-	"disallowMultipleLineBreaks": true,
-	"disallowSpacesInsideObjectBrackets": "all",
-    "disallowSpacesInsideArrayBrackets": "all"
+    "disallowSpaceBeforePostfixUnaryOperators": true,
+    "disallowTrailingWhitespace": true,
+    "disallowKeywords": ["with"],
+    "requireDotNotation": true,
+    "disallowYodaConditions": true,
+    "disallowNewlineBeforeBlockStatements": true,
+    "requireParenthesesAroundIIFE": true,
+    "disallowKeywordsOnNewLine": [
+        "else",
+        "catch"
+    ],
+    "disallowMultipleLineBreaks": true,
+    "disallowMultipleVarDecl": false,
+    "requirePaddingNewLinesAfterBlocks": false,
+    "disallowQuotedKeysInObjects": false
 }
