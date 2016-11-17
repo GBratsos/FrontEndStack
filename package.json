@@ -1,7 +1,7 @@
 {
   "name": "MyFrontEndDevStack",
   "version": "1.0.0",
-  "description": "A boilerplate for web projects utilizing Gulp and Compass",
+  "description": "A boilerplate for web projects utilizing Gulp and SASS",
   "author": "George Bratsos <geobratsos@gmail.com> (https://github.com/gbratsos)",
   "homepage": "https://github.com/GBratsos/FrontEndStack",
   "license": "MIT",
