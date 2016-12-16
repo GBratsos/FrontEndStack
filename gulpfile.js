@@ -21,8 +21,7 @@ var sassPaths = [
  */
 
 // Static Server + watching scss/html files
-gulp.task('serve', ['compile_styles'], function() {
-
+gulp.task('serve', ['compile_styles'], function () {
     browserSync.init({
         server: './website-dev'
     });
