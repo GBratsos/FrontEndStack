@@ -5,6 +5,7 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     cssmin = require('gulp-cssmin'),
     imagemin = require('gulp-imagemin'),
+    htmlreplace = require('gulp-html-replace'),
     browserSync = require('browser-sync').create();
 var $ = require('gulp-load-plugins')();
 
@@ -44,9 +45,9 @@ gulp.task('compile_styles', function () {
         .pipe(browserSync.stream());
 });
 
-//Runs all above Development Environment
+// Runs all above Development Environment
 gulp.task('watch', function () {
-    gulp.watch(['./scss/*'], ['serve'],['compile_styles']);
+    gulp.watch(['./scss/*'], ['serve'], ['compile_styles']);
 });
 
 /**
@@ -94,7 +95,7 @@ gulp.task('images', function () {
 // This task minify all CSS files
 gulp.task('css', function () {
     return gulp.src(config.paths.css.src)
-        .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+        .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 9', 'ios 6', 'android 4'))
         .pipe(cssmin())
         .pipe(concat('style.min.css'))
         .pipe(gulp.dest(config.paths.css.dest));
