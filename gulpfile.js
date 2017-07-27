@@ -95,7 +95,7 @@ gulp.task('images', function () {
 // This task minify all CSS files
 gulp.task('css', function () {
     return gulp.src(config.paths.css.src)
-        .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 9', 'ios 6', 'android 4'))
+        .pipe(autoprefixer('last 2 versions', 'ie >= 9'))
         .pipe(cssmin())
         .pipe(concat('style.min.css'))
         .pipe(gulp.dest(config.paths.css.dest));
