@@ -7,7 +7,6 @@ var gulp = require('gulp'),
     imagemin = require('gulp-imagemin'),
     htmlreplace = require('gulp-html-replace'),
     browserSync = require('browser-sync').create();
-var $ = require('gulp-load-plugins')();
 
 var sassPaths = [
     // Add your SASS path
