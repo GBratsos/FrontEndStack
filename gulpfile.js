@@ -33,11 +33,11 @@ gulp.task('serve', ['compile_styles'], function () {
 gulp.task('compile_styles', function () {
     gulp.
     src('scss/style.scss')
-        .pipe($.sass({
+        .pipe(sass({
                 includePaths: sassPaths
             })
-            .on('error', $.sass.logError))
-        .pipe($.autoprefixer({
+            .on('error', sass.logError))
+        .pipe(autoprefixer({
             browsers: ['last 2 versions', 'ie >= 9']
         }))
         .pipe(gulp.dest('website-dev/css'))
