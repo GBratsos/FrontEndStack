@@ -22,7 +22,7 @@ This stack contains my workflow Gulp tasks.
 # Directions
 
 * cd into directory and run `npm install`.
-* You can use [Bower](http://bower.io/) package manager to install packages (like Zurb Foundation or Twitter Bootstrap etc.). Type `bower install <package> --save`.
+* You can use [Bower](http://bower.io/) package manager to install packages (like Zurb Foundation or Twitter Bootstrap etc.). Type `npm run bower <package>`.
 * Go to the Gulpfile.js and add your Sass folders.
 
 After you have configured everything run:
