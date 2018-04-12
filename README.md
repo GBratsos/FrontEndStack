@@ -9,6 +9,7 @@ This stack contains my workflow Gulp tasks.
 
 # Gulp Taks
 
+* [Bower](https://www.npmjs.com/package/bower)
 * [Gulp-sass](https://www.npmjs.com/package/gulp-sass)
 * [Gulp-concat](https://www.npmjs.com/package/gulp-concat)
 * [Gulp-uglify](https://www.npmjs.com/package/gulp-uglify)
