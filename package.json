@@ -19,7 +19,8 @@
   ],
   "scripts": {
     "watch": "gulp serve",
-    "minify": "gulp min"
+    "minify": "gulp min",
+		"bower": "bower install"
   },
   "devDependencies": {
     "bower": "^1.8.4",
