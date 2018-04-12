@@ -9,14 +9,17 @@ This stack contains my workflow Gulp tasks.
 
 # Gulp Taks
 
-* [Gulp-sass](https://www.npmjs.com/package/gulp-sass)
+* [Bower](https://www.npmjs.com/package/bower)
+* [Browser-sync](https://www.browsersync.io/docs/gulp/)
+* [Gulp](https://www.npmjs.com/package/gulp)
 * [Gulp-concat](https://www.npmjs.com/package/gulp-concat)
-* [Gulp-uglify](https://www.npmjs.com/package/gulp-uglify)
+* [Gulp-html-replace](https://www.npmjs.com/package/gulp-html-replace)
 * [Gulp-Autoprefixer](https://www.npmjs.com/package/autoprefixer)
 * [Gulp-cssmin](https://www.npmjs.com/package/gulp-cssmin)
 * [Gulp-imagemin](https://github.com/sindresorhus/gulp-imagemin)
-* [Browser-sync](https://www.browsersync.io/docs/gulp/)
-* [Gulp-html-replace](https://www.npmjs.com/package/gulp-html-replace)
+* [Gulp-sass](https://www.npmjs.com/package/gulp-sass)
+* [Gulp-uglify](https://www.npmjs.com/package/gulp-uglify)
+
 
 # Directions
 
