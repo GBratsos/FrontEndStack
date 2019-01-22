@@ -7,7 +7,7 @@ Front-end developer stack with Sass.
 This stack contains my workflow Gulp tasks.
 
 
-# Gulp Taks
+# Gulp Packages
 
 * [Bower](https://www.npmjs.com/package/bower)
 * [Gulp-sass](https://www.npmjs.com/package/gulp-sass)
