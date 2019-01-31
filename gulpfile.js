@@ -1,5 +1,6 @@
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
+    sourcemaps = require('gulp-sourcemaps'),
     concat = require('gulp-concat'),
     autoprefixer = require('gulp-autoprefixer'),
     uglify = require('gulp-uglify'),
@@ -9,9 +10,8 @@ var gulp = require('gulp'),
     browserSync = require('browser-sync').create();
 
 var sassPaths = [
-    // Add your SASS path
-//  'bower_components/foundation-sites/scss'
-//  'bower_components/motion-ui/src'
+  // Add your SASS path
+  //'node_modules/foundation-sites/scss'
 ];
 
 /**
@@ -23,7 +23,8 @@ var sassPaths = [
 // Static Server + watching scss/html files
 gulp.task('serve', ['compile_styles'], function () {
     browserSync.init({
-        server: './website-dev'
+        server: './website-dev',
+        port: 8080
     });
 
     gulp.watch('scss/*', ['compile_styles']);
@@ -33,6 +34,7 @@ gulp.task('serve', ['compile_styles'], function () {
 gulp.task('compile_styles', function () {
     gulp.
     src('scss/style.scss')
+        .pipe(sourcemaps.init())
         .pipe(sass({
                 includePaths: sassPaths
             })
@@ -40,13 +42,15 @@ gulp.task('compile_styles', function () {
         .pipe(autoprefixer({
             browsers: ['last 2 versions', 'ie >= 9']
         }))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest('website-dev/css'))
-        .pipe(browserSync.stream());
+        .pipe(browserSync.reload({stream:true}));
 });
+
 
 // Runs all above Development Environment
 gulp.task('watch', function () {
-    gulp.watch(['./scss/*'], ['serve'], ['compile_styles']);
+  gulp.watch(['./scss/*'], ['serve'], ['compile_styles']);
 });
 
 /**
@@ -94,7 +98,6 @@ gulp.task('images', function () {
 // This task minify all CSS files
 gulp.task('css', function () {
     return gulp.src(config.paths.css.src)
-        .pipe(autoprefixer('last 2 versions', 'ie >= 9'))
         .pipe(cssmin())
         .pipe(concat('style.min.css'))
         .pipe(gulp.dest(config.paths.css.dest));

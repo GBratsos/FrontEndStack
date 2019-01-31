@@ -1,5 +1,16 @@
 // Add custom font
-// Import Bower components
-//@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
-//@import "fontawesome/scss/font-awesome.scss";
+
+// Import Node components/frameworks
+//@import "node_modules/slick-carousel/slick/slick-theme.scss";
+//@import "node_modules/slick-carousel/slick/slick.scss";
+
 // Import partial SCSS files
+
+// Import Atoms
+//@import 'atoms/common';
+
+// Import Molecules
+//@import 'molecules/error-page';
+
+// Import components
+//@import 'components/main';

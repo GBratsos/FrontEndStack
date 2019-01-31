@@ -9,7 +9,6 @@ This stack contains my workflow Gulp tasks.
 
 # Gulp Packages
 
-* [Bower](https://www.npmjs.com/package/bower)
 * [Gulp-sass](https://www.npmjs.com/package/gulp-sass)
 * [Gulp-concat](https://www.npmjs.com/package/gulp-concat)
 * [Gulp-uglify](https://www.npmjs.com/package/gulp-uglify)
@@ -22,7 +21,6 @@ This stack contains my workflow Gulp tasks.
 # Directions
 
 * cd into directory and run `npm install`.
-* You can use [Bower](http://bower.io/) package manager to install packages (like Zurb Foundation or Twitter Bootstrap etc.). Type `npm run bower <package>`.
 * Go to the Gulpfile.js and add your Sass folders.
 
 After you have configured everything run:
