@@ -83,7 +83,9 @@ var config = {
 // This task minifies user script.js
 gulp.task('scripts', function () {
     return gulp.src(config.paths.javascript.src)
-        .pipe(uglify())
+        .pipe(uglify().on('error', function(e){
+          console.log(e);
+        }))
         .pipe(concat('script.min.js'))
         .pipe(gulp.dest(config.paths.javascript.dest));
 });
